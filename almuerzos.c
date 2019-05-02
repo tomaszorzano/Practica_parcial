@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "Funciones.h"
+#include "menu.h"
+#include "fecha.h"
+#include "sectores.h"
+#include "empleados.h"

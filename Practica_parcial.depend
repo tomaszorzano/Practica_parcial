@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1556654555 source:c:\users\t13774\desktop\facultad\practica_parcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1556654556 c:\users\t13774\desktop\facultad\practica_parcial\funciones.h
+
+1556724114 source:c:\users\t13774\desktop\facultad\practica_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"menu.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+
+1556723927 source:c:\users\t13774\desktop\facultad\practica_parcial\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+	"Funciones.h"
+
+1556667680 c:\users\t13774\desktop\facultad\practica_parcial\menu.h
+
+1556752851 source:c:\users\t13774\desktop\facultad\practica_parcial\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+
+1556752920 source:c:\users\t13774\desktop\facultad\practica_parcial\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"fecha.h"
+
+1556752851 c:\users\t13774\desktop\facultad\practica_parcial\fecha.h
+
+1556723589 source:c:\users\t13774\desktop\facultad\practica_parcial\sectores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"sectores.h"
+
+1556667720 c:\users\t13774\desktop\facultad\practica_parcial\sectores.h
+
+1556674462 c:\users\t13774\desktop\facultad\practica_parcial\empleados.h
+
+1556675148 source:c:\users\t13774\desktop\facultad\practica_parcial\almuerzos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"menu.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+
