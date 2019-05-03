@@ -90,7 +90,6 @@ int addEmployee(eEmployee list[], int len)
 
 {
     eEmployee newEployee;
-    eFecha fechaEmpleado[MAXF];
     eSectores sectorEmpleado[MAXS];
 
     harcodeoSector(sectorEmpleado);
@@ -213,16 +212,57 @@ int addEmployee(eEmployee list[], int len)
             if(fecha == 0)
              {
                 printf("****** Fecha de Ingreso ******\n\n");
-                addDia(fechaEmpleado,MAXF,auxDia);
-                addMes(fechaEmpleado,MAXF,auxMes);
-                addAnio(fechaEmpleado,MAXF,auxAnio);
+
+                int dia;
+                int mes;
+                int anio;
+
+                do
+                {
+                    while(!funcion_getStringNumeros("Ingrese dia: ", auxDia))
+                    {
+                        printf("ERROR- EL DIA TIENE QUE CONTENER SOLO NUMEROS \n\n");
+                        system("pause");
+                        system("cls");
+                        dia=atoi(auxDia);
+
+                    };
+                }
+                while(( dia < 0)&&( dia > 31));
+
+                 do
+                {
+                    while(!funcion_getStringNumeros("Ingrese mes: ", auxMes))
+                    {
+                        printf("ERROR- EL MES TIENE QUE CONTENER SOLO NUMEROS \n\n");
+                        system("pause");
+                        system("cls");
+                        mes=atoi(auxMes);
+
+                    };
+                }
+                while(( mes < 0)&&( mes > 12));
+
+                 do
+                {
+                    while(!funcion_getStringNumeros("Ingrese anio: ", auxAnio))
+                    {
+                        printf("ERROR- EL ANIO TIENE QUE CONTENER SOLO NUMEROS \n\n");
+                        system("pause");
+                        system("cls");
+                        anio=atoi(auxAnio);
+
+                    };
+                }
+                while(( anio < 1900)&&( anio > 2999));
+
                 fecha=1;
 
 
             }
 
             printf("\nNombre: %s - Apellido: %s - Salario: %s - Genero %s- Sector:%s - Dia %s - Mes %s - Anio %s \n\n",auxName,auxLastName,auxSalary,auxGender,auxSector,auxDia,auxMes,auxAnio);
-
+            system("pause");
 
             while((nombre == 1) && (apellido == 1) && (salario == 1) && (genero == 1) && (fecha == 1) && (sector == 1))
             {
@@ -230,6 +270,9 @@ int addEmployee(eEmployee list[], int len)
                 strcpy(newEployee.lastName,auxLastName);
                 strcpy(newEployee.gender,auxGender);
                 newEployee.salary = atof(auxSalary);
+                newEployee.fechaEmpleado.dia = atoi(auxDia);
+                newEployee.fechaEmpleado.mes = atoi(auxMes);
+                newEployee.fechaEmpleado.anio = atoi(auxAnio);
                 strcpy(newEployee.sectorEmpleado.descripcion,auxSector);
 
                 newEployee.isEmpty=0;
