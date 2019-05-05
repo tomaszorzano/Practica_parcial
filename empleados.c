@@ -7,6 +7,7 @@
 #include "sectores.h"
 #include "empleados.h"
 
+
 #define MAX 1001
 #define MAXF 1001
 #define MAXS 5
@@ -288,10 +289,11 @@ int funcion_opciones()
     printf(" 2- MODIFICAR \n");
     printf(" 3- BAJA \n");
     printf(" 4- INFORMAR \n");
-    printf(" 5- SALIR \n ");
-    while(!funcion_getStringNumeros("Ingrese una opcion del 1-5 : ",auxOpcion))
+    printf(" 5- INGRESAR ALMUERZO \n");
+    printf(" 6- SALIR \n ");
+    while(!funcion_getStringNumeros("Ingrese una opcion del 1-6 : ",auxOpcion))
     {
-        printf("ERROR- La opcion tiene que ser solo numeros del 1 al 5\n\n");
+        printf("ERROR- La opcion tiene que ser solo numeros del 1 al 6\n\n");
 
         system("pause");
     }

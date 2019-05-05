@@ -71,7 +71,7 @@
 	"sectores.h"
 	"empleados.h"
 
-1556900452 source:c:\users\tomas\desktop\practica_parcial-master\almuerzos.c
+1557089125 source:c:\users\tomas\desktop\practica_parcial-master\almuerzos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -81,6 +81,7 @@
 	"fecha.h"
 	"sectores.h"
 	"empleados.h"
+	"almuerzos.h"
 
 1556900452 c:\users\tomas\desktop\practica_parcial-master\funciones.h
 
@@ -90,9 +91,9 @@
 
 1556900452 c:\users\tomas\desktop\practica_parcial-master\sectores.h
 
-1557077365 c:\users\tomas\desktop\practica_parcial-master\empleados.h
+1557083216 c:\users\tomas\desktop\practica_parcial-master\empleados.h
 
-1557077365 source:c:\users\tomas\desktop\practica_parcial-master\empleados.c
+1557089626 source:c:\users\tomas\desktop\practica_parcial-master\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -116,7 +117,7 @@
 	<string.h>
 	"funciones.h"
 
-1557077365 source:c:\users\tomas\desktop\practica_parcial-master\main.c
+1557089239 source:c:\users\tomas\desktop\practica_parcial-master\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -126,6 +127,7 @@
 	"fecha.h"
 	"sectores.h"
 	"empleados.h"
+	"almuerzos.h"
 
 1556900452 source:c:\users\tomas\desktop\practica_parcial-master\menu.c
 	<stdio.h>
@@ -142,4 +144,6 @@
 	<ctype.h>
 	"Funciones.h"
 	"sectores.h"
+
+1557089134 c:\users\tomas\desktop\practica_parcial-master\almuerzos.h
 

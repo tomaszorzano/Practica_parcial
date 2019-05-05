@@ -7,17 +7,21 @@
 #include "fecha.h"
 #include "sectores.h"
 #include "empleados.h"
+#include "almuerzos.h"
+
 
 #define MAX 1001
-#define MAXMENU 101
-#define MAXSEC 101
-
+#define MAXMENU 5
+#define MAXSEC 5
+#define MAXALM 21
+#define MAXF 1001
 int funcion_opciones();
 
 int main()
 {
     eMenu menus[MAXMENU];
     eSectores sectores[MAXSEC];
+    eAlmuerzo almuerzo[MAXALM];
 
     harcodeoMenu(menus);
     harcodeoSector(sectores);
@@ -27,6 +31,7 @@ int main()
         char seguir='s';
         eEmployee employee[MAX];
         initEmployees(employee,MAX);
+        initLunch(almuerzo,MAXALM);
         int flagSinAlta=0;
 
 
@@ -76,6 +81,19 @@ int main()
 
                 break;
             case 5:
+                  if (flagSinAlta == 0)
+                {
+                    printf("\nNO EXISTEN EMPLEADOS EN EL SISTEMA\n\n");
+                    break;
+                }
+                else
+                {
+                    addLunch(almuerzo,MAXALM,employee,MAX,menus,MAXMENU);
+                    viewLunchs(almuerzo,MAXALM);
+                };
+
+                break;
+            case 6:
                 printf("Saliendo...");
                 exit(-1);
                 break;
