@@ -70,7 +70,7 @@ int main()
                 }
                 else
                 {
-
+                    sortemployees(employee,MAX);
                     viewEmployees(employee, MAX);
                 };
 

@@ -71,3 +71,75 @@
 	"sectores.h"
 	"empleados.h"
 
+1556900452 source:c:\users\tomas\desktop\practica_parcial-master\almuerzos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"menu.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+
+1556900452 c:\users\tomas\desktop\practica_parcial-master\funciones.h
+
+1556900452 c:\users\tomas\desktop\practica_parcial-master\menu.h
+
+1556972422 c:\users\tomas\desktop\practica_parcial-master\fecha.h
+
+1556900452 c:\users\tomas\desktop\practica_parcial-master\sectores.h
+
+1557077365 c:\users\tomas\desktop\practica_parcial-master\empleados.h
+
+1557077365 source:c:\users\tomas\desktop\practica_parcial-master\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+
+1556976830 source:c:\users\tomas\desktop\practica_parcial-master\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"fecha.h"
+
+1556900452 source:c:\users\tomas\desktop\practica_parcial-master\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1557077365 source:c:\users\tomas\desktop\practica_parcial-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"menu.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+
+1556900452 source:c:\users\tomas\desktop\practica_parcial-master\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+	"Funciones.h"
+
+1556900452 source:c:\users\tomas\desktop\practica_parcial-master\sectores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"sectores.h"
+

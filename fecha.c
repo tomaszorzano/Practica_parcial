@@ -5,107 +5,93 @@
 #include "Funciones.h"
 #include "fecha.h"
 
-
-void addDia(eFecha list[], int len,char imput[])
-
+int funcion_ValidarFecha(char dia[11],char mes[11],char anio[11])
 {
-    char auxDia[6];
-    int entro=0;
-    int dia=0;
+    int auxDia,auxMes,auxAnio,ret=0;
 
-    if(entro == 0)
+    auxDia=atoi(dia);
+    auxMes=atoi(mes);
+    auxAnio=atoi(anio);
+
+    if ( ((auxMes >= 1) && (auxMes <= 12)) )
     {
-        do
+        switch ( auxMes )
         {
-            while(!funcion_getStringNumeros("Ingrese dia: ", auxDia))
+        case  1 :
+        case  3 :
+        case  5 :
+        case  7 :
+        case  8 :
+        case 10 :
+        case 12 :
+            if ( auxDia >= 1 && auxDia <= 31 )
             {
-                printf("ERROR- EL DIA TIENE QUE CONTENER SOLO NUMEROS\n\n ");
-                system("pause");
-                system("cls");
-                printf("\nDia: %s \n",auxDia);
+                ret=1;
             }
-        }
-        while ((dia < 0)&&(dia > 31));
-
-        strcpy(imput,auxDia);
-        entro=1;
-
-
-
-    }
-
-
-};
-
-void addMes(eFecha list[], int len,char imput[])
-
-{
-    char auxMes[6];
-    int entro=0;
-    int mes=0;
-
-    if(entro == 0)
-    {
-        do
-        {
-            while(!funcion_getStringNumeros("Ingrese mes: ", auxMes))
+            else
             {
-                printf("ERROR- EL DIA TIENE QUE CONTENER SOLO NUMEROS\n\n ");
+                printf("Dia incorrecto\n\n");
                 system("pause");
-                system("cls");
-                printf("\nDia: %s \n",auxMes);
-
-
-
+                ret=0;
 
             }
-        }
-        while((mes < 0 )&& (mes >13));
-        strcpy(imput,auxMes);
-        entro=1;
+            break;
 
-
-    }
-
-
-};
-
-void addAnio(eFecha list[], int len,char imput[])
-
-{
-    char auxAnio[6];
-    int entro=0;
-    int anio=0;
-
-    if(entro == 0)
-    {
-
-
-        do
-        {
-            while(!funcion_getStringNumeros("Ingrese anio: ", auxAnio))
+        case  4 :
+        case  6 :
+        case  9 :
+        case 11 :
+            if ( auxDia >= 1 && auxDia<= 30 )
             {
-                printf("ERROR- EL ANIO TIENE QUE CONTENER SOLO NUMEROS\n\n ");
+                ret=1;
+            }
+            else
+            {
+                printf("Dia incorrecto\n\n");
                 system("pause");
-                system("cls");
-                printf("\nAnio: %s \n",auxAnio);
+                ret=0;
+            }
 
+            break;
+
+        case  2 :
+            if ( ((auxAnio % 4 == 0) && (auxAnio % 100 != 0)) || (auxAnio % 400 == 0 ))
+            {
+                if ( auxDia >= 1 && auxDia <= 29 )
+                {
+                    ret=1;
+                }
+                else
+                {
+                    printf("Dia incorrecto\n\n");
+                    system("pause");
+                    ret=0;
+                }
 
             }
+            else if ( auxDia >= 1 && auxDia <= 28 )
+            {
+                ret=1;
+            }
+            else
+            {
+                printf("Dia incorrecto\n\n");
+                system("pause");
+                ret=0;
+            }
+
+            break;
+
 
 
         }
-        while((anio< 1900) && (anio >2100));
-
-            strcpy(imput,auxAnio);
-            entro=1;
-
-
 
     }
-};
+    else
+    {
+        printf("Mes Ingresado es incorrecto\n\n");
+        system("pause");
+    }
 
-
-
-
-
+    return ret;
+}

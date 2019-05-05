@@ -64,7 +64,7 @@ int findEmployee(eEmployee list[],int len, int file)
 void viewEmployee(eEmployee aEmployee)
 {
 
-    printf(" \nLegajo:%d - Nombre:%s -  Apellido:%s- Genero:%s - Salario:%.2f-  Sector:%s-  Dia:%s-  Mes:%s-  Anio:%s \n ", aEmployee.file, aEmployee.name, aEmployee.lastName, aEmployee.gender, aEmployee.salary,aEmployee.sectorEmpleado.descripcion,aEmployee.fechaEmpleado.dia,aEmployee.fechaEmpleado.mes,aEmployee.fechaEmpleado.anio);
+    printf(" \nLegajo:%d - Nombre:%s -  Apellido:%s- Genero:%s - Salario:%.2f-  Sector:%s-  Dia:%d-  Mes:%d-  Anio:%d \n ", aEmployee.file, aEmployee.name, aEmployee.lastName, aEmployee.gender, aEmployee.salary,aEmployee.sectorEmpleado.descripcion,aEmployee.fechaEmpleado.dia,aEmployee.fechaEmpleado.mes,aEmployee.fechaEmpleado.anio);
 };
 
 void viewEmployees(eEmployee list[], int len)
@@ -83,11 +83,7 @@ void viewEmployees(eEmployee list[], int len)
     }
 
 };
-
-
-
 int addEmployee(eEmployee list[], int len)
-
 {
     eEmployee newEployee;
     eSectores sectorEmpleado[MAXS];
@@ -100,11 +96,11 @@ int addEmployee(eEmployee list[], int len)
     char auxSalary[10];
     char auxGender[51];
     char auxSector[51];
-    char auxDia[5];
-    char auxMes[5];
-    char auxAnio[5];
-    int ret;
-
+    char auxDia[11];
+    char auxMes[11];
+    char auxAnio[11];
+    float ret;
+    int fechaCorrecta=-1;
     int nombre=0,apellido=0,salario=0,genero=0,fecha=0;
     int sector=0;
 
@@ -133,7 +129,7 @@ int addEmployee(eEmployee list[], int len)
 
             if(nombre == 0 )
             {
-                while(!funcion_getStringLetras("Ingrese Nombre: ", auxName))
+                while(!funcion_getStringLetras("Ingrese Nombre: ",auxName))
                 {
                     printf("ERROR- EL NOMBRE TIENE QUE CONTENER SOLO LETRAS\n\n ");
                     system("pause");
@@ -151,7 +147,7 @@ int addEmployee(eEmployee list[], int len)
 
             if(apellido==0)
             {
-                while(!funcion_getStringLetras("Ingrese Apellido: ", auxLastName))
+                while(!funcion_getStringLetras("Ingrese Apellido: ",auxLastName))
                 {
                     printf("ERROR- EL APELLIDO TIENE QUE CONTENER SOLO LETRAS\n\n ");
                     system("pause");
@@ -163,10 +159,10 @@ int addEmployee(eEmployee list[], int len)
                 apellido=1;
 
             }
-            printf("\nNombre: %s - Apellido: %s \n\n",auxName,auxLastName);
+            printf("\nNombre: %s - Apellido: %s \n",auxName,auxLastName);
             if(salario == 0)
             {
-                while(!funcion_getStringNumerosFlotantes("Ingrese Salario: ", auxSalary))
+                while(!funcion_getStringNumerosFlotantes("Ingrese Salario: ",auxSalary))
                 {
                     printf("ERROR- EL SALARIO TIENE QUE CONTENER SOLO NUMEROS \n\n");
                     system("pause");
@@ -181,7 +177,7 @@ int addEmployee(eEmployee list[], int len)
 
             if(genero == 0)
             {
-                while(!funcion_getStringLetras("Ingrese Genero: ", auxGender))
+                while(!funcion_getStringLetras("Ingrese Genero: ",auxGender))
                 {
                     printf("ERROR- EL GENERO TIENE QUE CONTENER SOLO NUMEROS ENTEROS \n\n");
                     system("pause");
@@ -192,77 +188,63 @@ int addEmployee(eEmployee list[], int len)
                 genero=1;
 
             }
-            printf("\nNombre: %s - Apellido: %s - Salario: %s - Genero %s \n\n",auxName,auxLastName,auxSalary,auxGender);
+            printf("\nNombre: %s - Apellido: %s - Salario: %s - Genero %s \n",auxName,auxLastName,auxSalary,auxGender);
 
             if(sector == 0)
             {
                 viewSectores(sectorEmpleado,MAXS);
-                while(!funcion_getStringLetras("Ingrese sector: ", auxSector))
+                while(!funcion_getStringLetras("Ingrese sector: ",auxSector))
                 {
                     printf("ERROR- EL SECTOR TIENE QUE CONTENER SOLO NUMEROS ENTEROS \n\n");
                     system("pause");
                     system("cls");
-                    printf("\nNombre: %s - Apellido: %s - Salario: %s- Genero: %s \n\n",auxName,auxLastName,auxSalary,auxGender);
+                    printf("\nNombre: %s - Apellido: %s - Salario: %s- Genero: %s \n",auxName,auxLastName,auxSalary,auxGender);
                     sector=1;
                  };
                 sector=1;
 
             }
-           printf("\nNombre: %s - Apellido: %s - Salario: %s - Genero %s - Sector: %s \n\n",auxName,auxLastName,auxSalary,auxGender,auxSector);
+           printf("\nNombre: %s - Apellido: %s - Salario: %s - Genero %s - Sector: %s \n",auxName,auxLastName,auxSalary,auxGender,auxSector);
+
             if(fecha == 0)
-             {
-                printf("****** Fecha de Ingreso ******\n\n");
-
-                int dia;
-                int mes;
-                int anio;
-
+            {
                 do
                 {
-                    while(!funcion_getStringNumeros("Ingrese dia: ", auxDia))
-                    {
-                        printf("ERROR- EL DIA TIENE QUE CONTENER SOLO NUMEROS \n\n");
-                        system("pause");
-                        system("cls");
-                        dia=atoi(auxDia);
+                       system("cls");
+                       printf("****** Fecha de Ingreso ******\n\n");
+                       while(!funcion_getStringNumeros("Ingrese dia: ", auxDia))
+                        {
+                            printf("ERROR- EL DIA TIENE QUE CONTENER SOLO NUMEROS \n\n");
+                            system("pause");
+                            system("cls");
 
-                    };
-                }
-                while(( dia < 0)&&( dia > 31));
+                        };
+                        while(!funcion_getStringNumeros("Ingrese mes: ", auxMes))
+                        {
+                            printf("ERROR- EL MES TIENE QUE CONTENER SOLO NUMEROS \n\n");
+                            system("pause");
+                            system("cls");
 
-                 do
-                {
-                    while(!funcion_getStringNumeros("Ingrese mes: ", auxMes))
-                    {
-                        printf("ERROR- EL MES TIENE QUE CONTENER SOLO NUMEROS \n\n");
-                        system("pause");
-                        system("cls");
-                        mes=atoi(auxMes);
+                        };
+                        while(!funcion_getStringNumeros("Ingrese anio: ", auxAnio))
+                        {
+                            printf("ERROR- EL ANIO TIENE QUE CONTENER SOLO NUMEROS \n\n");
+                            system("pause");
+                            system("cls");
+                        };
 
-                    };
-                }
-                while(( mes < 0)&&( mes > 12));
+                        fechaCorrecta = funcion_ValidarFecha(auxDia,auxMes,auxAnio);
 
-                 do
-                {
-                    while(!funcion_getStringNumeros("Ingrese anio: ", auxAnio))
-                    {
-                        printf("ERROR- EL ANIO TIENE QUE CONTENER SOLO NUMEROS \n\n");
-                        system("pause");
-                        system("cls");
-                        anio=atoi(auxAnio);
-
-                    };
-                }
-                while(( anio < 1900)&&( anio > 2999));
+                    }
+                    while(fechaCorrecta == 0);
 
                 fecha=1;
 
 
             }
 
-            printf("\nNombre: %s - Apellido: %s - Salario: %s - Genero %s- Sector:%s - Dia %s - Mes %s - Anio %s \n\n",auxName,auxLastName,auxSalary,auxGender,auxSector,auxDia,auxMes,auxAnio);
-            system("pause");
+                printf("\nNombre: %s - Apellido: %s - Salario: %s - Genero %s- Sector: %s\n\nFecha de Ingreso\n\nDia %s - Mes %s - Anio %s \n\n",auxName,auxLastName,auxSalary,auxGender,auxSector,auxDia,auxMes,auxAnio);
+                system("pause");
 
             while((nombre == 1) && (apellido == 1) && (salario == 1) && (genero == 1) && (fecha == 1) && (sector == 1))
             {
@@ -275,7 +257,7 @@ int addEmployee(eEmployee list[], int len)
                 newEployee.fechaEmpleado.anio = atoi(auxAnio);
                 strcpy(newEployee.sectorEmpleado.descripcion,auxSector);
 
-                newEployee.isEmpty=0;
+                newEployee.isEmpty = 0;
                 list[index] = newEployee ;
                 system("cls");
                 printf("\n\n********NUEVO EMPLEADO, BIENVENIDO*********\n\n");
@@ -371,7 +353,7 @@ int removeEmployee(eEmployee* list, int len)
 
     index = findEmployee(list, len, id);
 
-    while (index == -1)
+    while (index == 0)
     {
         printf("NO HAY NINGUN EMPLEADO CON ESE LEGAJO %d\n\n", id);
         while(!funcion_getStringNumeros("Ingrese un legajo existente: ", auxId))
@@ -387,7 +369,7 @@ int removeEmployee(eEmployee* list, int len)
 
 
 
-    while (index == 0)
+    while (index == 1)
     {
         viewEmployee(list[index]);
 
@@ -424,6 +406,7 @@ int removeEmployee(eEmployee* list, int len)
 void modifyEmployee(eEmployee list[], int len)
 {
     eSectores nSector[MAXS];
+    harcodeoSector(nSector);
     int id;
     char auxId[5];
     int index;
@@ -517,6 +500,7 @@ void modifyEmployee(eEmployee list[], int len)
                 fflush(stdin);
                 viewEmployee(list[index]);
                 viewSectores(nSector,MAXS);
+
                 while(!funcion_getStringLetras("Ingrese sector nuevo: ", newSector))
                 {
                     printf("ERROR- EL SECTOR TIENE QUE CONTENER SOLO LETRAS \n\n");
@@ -540,7 +524,8 @@ void modifyEmployee(eEmployee list[], int len)
                 break;
             case 6:
                 printf("Volviendo a menu principal");
-                exit = 0;
+                exit = 1;
+
                 break;
             default:
                 printf("\n\nOpcion ingresada incorrecta, por favor ingrese una opcion del 1 al 6\n\n");
@@ -553,8 +538,8 @@ void modifyEmployee(eEmployee list[], int len)
             if(exit==0)
 
             {
-                printf("\n*** MODIFICACCION EXITOSA ***");
-                printf("\n  Desea continuar modificando? \n\n");
+                printf("\n     *** MODIFICACCION EXITOSA ***");
+                printf("\nDesea continuar modificando? \n\n");
                 scanf("%c",&seguir);
 
                 fflush(stdin);
@@ -564,7 +549,7 @@ void modifyEmployee(eEmployee list[], int len)
 
             else
             {
-                printf("\n\n esta por salir de modificacion esta seguro? s/n \n\n");
+                printf("\n\nEsta por salir de modificacion esta seguro? s/n \n\n");
                 scanf("%c",&seguir);
 
                 fflush(stdin);
@@ -577,7 +562,46 @@ void modifyEmployee(eEmployee list[], int len)
 
 
     }
+    };
+
+int sortemployees(eEmployee list[], int len)
+{
+    eEmployee auxEmployee;
+
+    int ret;
 
 
+    if(list != NULL && len > 0)
+    {
+
+        for(int i = 0; i < len-1; i++)
+        {
+            for(int j = i+1; j < len; j++)
+            {
+               if(strcmp(list[j].lastName, list[i].lastName) > 0 && list[j].isEmpty == 0 && list[i].isEmpty == 0)
+                {
+                    auxEmployee = list[i];
+                    list[i] = list[j];
+                    list[j] = auxEmployee;
+                }
+                else if(strcmp(list[j].lastName, list[i].lastName) == 0 && list[j].name < list[i].name  && list[j].isEmpty == 0 && list[i].isEmpty == 0)
+                {
+                    auxEmployee = list[i];
+                    list[i] = list[j];
+                    list[j] = auxEmployee;
+                }
+            }
+        }
+    }
+
+
+    else
+    {
+        ret = -1;
+    }
+
+
+    return ret;
 
 };
+

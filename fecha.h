@@ -6,7 +6,4 @@ typedef struct
 
 } eFecha;
 
-
-void addDia(eFecha list[], int len,char impyt []);
-void addMes(eFecha list[], int len,char impyt []);
-void addAnio(eFecha list[], int len,char impyt []);
+int funcion_ValidarFecha(char dia[11],char mes[11],char anio[11]);

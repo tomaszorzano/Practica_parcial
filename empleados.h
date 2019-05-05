@@ -19,5 +19,6 @@ int addEmployee(eEmployee list[], int len);
 int funcion_opciones();
 int removeEmployee(eEmployee* list, int len);
 void modifyEmployee(eEmployee list[], int len);
+int sortemployees(eEmployee list[], int len);
 
 
