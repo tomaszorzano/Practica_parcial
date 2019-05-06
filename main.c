@@ -81,7 +81,7 @@ int main()
 
                 break;
             case 5:
-                  if (flagSinAlta == 0)
+                if (flagSinAlta == 0)
                 {
                     printf("\nNO EXISTEN EMPLEADOS EN EL SISTEMA\n\n");
                     break;
@@ -89,7 +89,8 @@ int main()
                 else
                 {
                     addLunch(almuerzo,MAXALM,employee,MAX,menus,MAXMENU);
-                    viewLunchs(almuerzo,MAXALM);
+
+                    //viewLunchs(almuerzo,MAXALM,employee,employee[index].file);
                 };
 
                 break;

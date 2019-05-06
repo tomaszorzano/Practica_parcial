@@ -64,13 +64,14 @@ int findLunch(eAlmuerzo list[],int len, int file)
 
 };
 
-void viewLunch(eAlmuerzo aAlmuerzo)
+void viewLunch(eAlmuerzo aAlmuerzo, eEmployee listEmp[],int index)
 {
 
-    printf(" \nCodigo:%d - Menu:%s -  legajo:%d-  Nombre:%s-  Apellido:%s- Dia:%d-  Mes:%d-  Anio:%d \n ", aAlmuerzo.codigoAlm, aAlmuerzo.menuAlm.descripcion, aAlmuerzo.legAlm.file,aAlmuerzo.legAlm.name,aAlmuerzo.legAlm.lastName+,aAlmuerzo.fechaAlm.dia,aAlmuerzo.fechaAlm.mes,aAlmuerzo.fechaAlm.anio);
+    viewEmployee(listEmp[index]);
+    printf(" \nCodigo:%d - Menu:%s -  legajo:%d- Dia:%d-  Mes:%d-  Anio:%d \n ", aAlmuerzo.codigoAlm, aAlmuerzo.menuAlm.descripcion, aAlmuerzo.legAlm.file,aAlmuerzo.fechaAlm.dia,aAlmuerzo.fechaAlm.mes,aAlmuerzo.fechaAlm.anio);
 };
 
-void viewLunchs(eAlmuerzo list[], int len)
+void viewLunchs(eAlmuerzo list[], int len, eEmployee listEmp[],int index)
 {
 
     system("cls");
@@ -81,7 +82,7 @@ void viewLunchs(eAlmuerzo list[], int len)
 
         if( list[i].isEmpty == 0)
         {
-            viewLunch(list[i]);
+            viewLunch(list[i],listEmp,index);
         }
     }
 
@@ -97,11 +98,14 @@ int addLunch(eAlmuerzo list[],int len,eEmployee listEmp[],int lenEmp,eMenu listM
     harcodeoMenu(listMenu);
 
     int index;
+    int indexE;
     char auxMenu[51];
     char auxLegajo[51];
     char auxDia[11];
     char auxMes[11];
     char auxAnio[11];
+    char auxName[51];
+    char auxLastName[51];
     float ret;
     int fechaCorrecta=-1;
     int menu=0,legajo=0,fecha=0;
@@ -202,8 +206,14 @@ int addLunch(eAlmuerzo list[],int len,eEmployee listEmp[],int lenEmp,eMenu listM
 
 
             }
+                indexE=findEmployee(listEmp,MAXEMP,atoi(auxLegajo));
+                strcpy(auxName,newAlmuerzo.legAlm.name);
+                strcpy(auxLastName,newAlmuerzo.legAlm.lastName);
+
+
 
                 printf("\nMenu: %s - Legajo: %s\n\nFecha de Almuerzo\n\nDia %s - Mes %s - Anio %s \n\n",auxMenu,auxLegajo,auxDia,auxMes,auxAnio);
+                viewEmployee(listEmp[indexE]);
                 system("pause");
 
             while((menu == 1) && (legajo == 1) &&(fecha == 1))
@@ -220,7 +230,8 @@ int addLunch(eAlmuerzo list[],int len,eEmployee listEmp[],int lenEmp,eMenu listM
                 list[index] = newAlmuerzo ;
                 system("cls");
                 printf("\n\n********ALMUERZO CARGADO CORRECTAMENTE*********\n\n");
-                viewLunch(list[index]);
+
+                viewLunch(list[index],listEmp,indexE);
                 printf("\n\n\n");
                 ret=0;
                 break;

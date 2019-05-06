@@ -147,3 +147,79 @@
 
 1557089134 c:\users\tomas\desktop\practica_parcial-master\almuerzos.h
 
+1557165483 source:c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\almuerzos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"menu.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+	"almuerzos.h"
+
+1557161389 c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\funciones.h
+
+1557161390 c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\menu.h
+
+1557161388 c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\fecha.h
+
+1557161391 c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\sectores.h
+
+1557161364 c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\empleados.h
+
+1557165252 c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\almuerzos.h
+
+1557165483 source:c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+
+1557161375 source:c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"fecha.h"
+
+1557161388 source:c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1557165221 source:c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"menu.h"
+	"fecha.h"
+	"sectores.h"
+	"empleados.h"
+	"almuerzos.h"
+
+1557161389 source:c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+	"Funciones.h"
+
+1557161391 source:c:\users\t13774\desktop\facultad\practica_parcial2\practica_parcial-master\sectores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
+	"sectores.h"
+

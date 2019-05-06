@@ -72,7 +72,7 @@ void viewEmployees(eEmployee list[], int len)
 {
 
     system("cls");
-    printf(" Legajo Nombre Apellido Genero Salario Sector Dia Mes Anio \n\n");
+
 
     for(int i=0; i < len; i++)
     {
